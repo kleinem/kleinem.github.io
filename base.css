@@ -1,0 +1,480 @@
+@font-face { 
+    font-family: Heebo; src: url("assets/common/Heebo.ttf"); 
+}
+
+@font-face { 
+    font-family: Inconsolata; src: url("assets/common/Inconsolata.ttf"); 
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    color: #efe0eb;
+
+}
+
+div {
+
+    height: 100%;
+    width: 100%;
+
+}
+a {
+
+    text-decoration: none;
+
+}
+a:hover {
+
+    text-shadow: 0px 0px 10px #e096c1,0px 0px 10px #e096c1,0px 0px 10px #e096c1,0px 0px 10px #e096c1;
+
+}
+
+
+.wedges {
+
+    position: absolute;
+    height: 800px;
+
+}
+.wedges2 {
+
+    position: absolute;
+    height: 720px;
+
+}
+.fit {
+
+    opacity: 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-property: all;
+    transition-duration: 2s;
+
+}
+.justify {
+
+    text-align: justify;
+    text-justify: inter-character;
+
+}
+.justify:after {
+
+    content: "";
+    display: inline-block;
+    width: 100%;
+
+}
+.bg {
+
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+}
+.wedge1 {
+
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 960px;
+    height: 540px;
+    top: 0px;
+    left: calc(50vw - 490px);
+
+}
+.wedge2 {
+
+    clip-path: polygon(0% 0%, 85% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 960px;
+    height: 540px;
+    top: 200px;
+    right: calc(50vw + 320px);
+
+}
+.wedge3 {
+
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 960px;
+    height: 540px;
+    top: 200px;
+    left: calc(50vw + 320px);
+
+}
+.wedge4 {
+
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 1280px;
+    height: 720px;
+    top: 260px;
+    right: calc(50vw - 240px);
+
+}
+.wedge5 {
+
+    clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 1280px;
+    height: 720px;
+    top: 720px;
+    right: calc(50vw - 1260px);
+
+}
+.wedge6 {
+
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 0% 100%);
+    position: absolute;
+    background-color: #ffffff;
+    width: 1280px;
+    height: 720px;
+    top: 0px;
+    right: calc(50vw - 320px);
+
+}
+.text1 {
+
+    position: absolute;
+    width: 960px;
+    left: calc(50vw - 490px);
+    top: 560px;
+    height: 180px;
+
+}
+.text2 {
+
+    text-align: left;
+    font-family: Inconsolata;
+    position: absolute;
+    width: 760px;
+    right: calc(50vw - 920px);
+    top: 260px;
+    height: 420px;
+    font-size: 30px;
+    font-weight: 100;
+
+}
+.text3 {
+
+    font-family: Inconsolata;
+    position: absolute;
+    width: 860px;
+    right: calc(50vw + 60px);
+    top: 1020px;
+    height: 520px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: left;
+
+}
+.text4 {
+
+    font-family: Inconsolata;
+    position: absolute;
+    width: 640px;
+    left: calc(50vw + 280px);
+    top: 20px;
+    height: 520px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: right;
+
+}
+.text5 {
+
+    font-family: Inconsolata;
+    position: absolute;
+    width: 840px;
+    left: calc(50vw - 420px);
+    top: 200px;
+    height: 520px;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+
+}
+.text6 {
+
+    font-family: Inconsolata;
+    position: absolute;
+    width: 840px;
+    left: calc(50vw - 420px);
+    top: 200px;
+    height: 520px;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+
+}
+.load2 {
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+
+}
+.load3 {
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+
+}
+.load4 {
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+
+}
+.load5 {
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+
+}
+.load6 {
+
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+
+}
+
+#header {
+
+    font-family: Heebo;
+    font-size: 60px;
+    font-weight: 200;
+
+}
+#container {
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
+
+}
+#bg1 {
+
+    background-image: url("assets/common/background1.jpg");
+    
+}
+#bg2 {
+
+    background-image: url("assets/common/background2.png");
+    
+}
+#bg3 {
+
+    background-image: url("assets/common/background3.png");
+    
+}
+#bg4 {
+
+    background-image: url("assets/common/background4.png");
+    
+}
+#content {
+
+    display: inline-block;
+    position: absolute;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+}
+#innerContent {
+
+    display: inline-block;
+    position: absolute;
+    height: 100vh;
+    padding-top: 130px;
+    text-align: center;
+
+}
+#topBar {
+
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    background-color: #060607;
+    box-shadow: 0 0px 20px 20px #060607;
+
+
+    animation-name: loadTopBar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+}
+#topLeft {
+
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 480px;
+    height: 60px;
+
+}
+#icon {
+
+    position: absolute;
+    height: 40px;
+    margin: 10px;
+    left: 0;
+
+}
+#name {
+
+    position: absolute;
+    font-family: Heebo;
+    font-weight: 200;
+    font-size: 40px;
+    left: 80px;
+    width: 200px;
+
+}
+#bracket1 {
+
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 10px;
+
+}
+#interior1 {
+
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 170px;
+    overflow: hidden;
+
+}
+#interior2 {
+
+    left: 0px;
+    position: absolute;
+    width: 340px;
+
+    animation-name: nameAlternate;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+
+}
+#kleinem {
+
+    position: absolute;
+    width: 170px;
+
+}
+#klein {
+
+    top: 8px;
+    position: absolute;
+    font-size: 18px;
+    width: 170px;
+    left: 170px;
+    line-height: 20px;
+
+}
+#bracket2 {
+
+    position: absolute;
+    left: 202px;
+    top: 0;
+    width: 10px;
+
+}
+#profession {
+
+    font-size: 16px;
+    font-family: Inconsolata;
+    position: absolute;
+    top: 11px;
+    left: 310px;
+    width: 150px;
+
+}
+#topRight {
+
+    font-size: 16px;
+    font-family: Inconsolata;
+    position: absolute;
+    width: 40%;
+    height: 60px;
+    right: 10px;
+    top: 10px;
+
+}
+#aboutMe {
+
+    margin-top: 12px;
+    position: absolute;
+    width: 80px;
+    left: 10px;
+}
+#projects {
+
+    margin-top: 12px;
+    position: absolute;
+    width: 80px;
+    right: 50%;
+    margin-right: -40px;
+
+}
+#contactMe {
+
+    margin-top: 12px;
+    position: absolute;
+    width: 80px;
+    right: 10px;
+
+}
+
+
+@keyframes loadTopBar {
+    from {top: -100%;}
+    to {top: 0px}
+}
+
+@keyframes nameAlternate {
+    0% {left:0px;}
+    9% {left:-170px;}
+    50% {left:-170px;}
+    59% {left:0px;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+
+
