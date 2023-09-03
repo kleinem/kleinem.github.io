@@ -1,0 +1,137 @@
+p {
+
+    font-family: Heebo;
+    font-size: 1.6vw;
+    font-weight: 100;
+    text-shadow: 0px 0px 1vw #efe0eb;
+}
+h3 {
+
+    width: 17vw;
+    padding: 2vw;
+    text-align: center;
+    font-family: Inconsolata;
+    font-size: 2vw;
+    font-weight: 400;
+    text-shadow: 0px 0px 1vw #efe0eb;
+
+    transition-duration: 0.3s;
+    transition-property: text-shadow;
+
+}
+h3:hover {
+
+    text-shadow: 0px 0px 1vw #e096c1,0px 0px 1vw #e096c1,0px 0px 1vw #e096c1,0px 0px 1vw #e096c1;
+
+}
+
+.bold {
+
+    font-weight: 300; 
+    left: -4vw; 
+    position: relative;
+
+}
+
+#showcase {
+
+    width: 90vw;
+    height: 76vw;
+    position: relative;
+
+}
+#date {
+
+    position: absolute;
+    font-size: 1.2vw;
+    font-weight: 200;
+    top: -4vw;
+    width: 5vw;
+    height: 2vw;
+    left: 42.5vw;
+    text-align: center;
+    text-shadow: 0px 0px 1vw #efe0eb;
+
+}
+#playNow {
+
+    position: absolute; 
+    top: 33vw; 
+    left: 12vw; 
+    font-size: 2.5vw;
+
+}
+#platform {
+
+    position: absolute; 
+    top: 0vw; 
+    left: 4vw; 
+    height: 8vw; 
+    width: 30vw;
+
+}
+#teamSize {
+
+    position: absolute; 
+    top: 8vw; 
+    left: 4vw; 
+    height: 8vw; 
+    width: 32vw;
+
+}
+#affiliation {
+
+    position: absolute; 
+    top: 16vw; 
+    left: 4vw; 
+    height: 8vw; 
+    width: 34vw;
+
+}
+#developmentRoles {
+
+    position: absolute; 
+    top: 24vw; 
+    left: 4vw; 
+    height: 8vw; 
+    width: 36vw;
+
+}
+#reflection {
+
+    position: absolute; 
+    top: 42vw; 
+    right: 0vw; 
+    height: 8vw; 
+    width: 36vw; 
+    text-align: justify;
+    font-size: 1.3vw;
+
+}
+#video {
+
+    height: 26vw; 
+    position: absolute; 
+    top: 44vw; 
+    left: 0vw; 
+    width: 46.222222vw;
+
+}
+#panel {
+
+    position: absolute;
+    top: -1.5vw;
+    left: -5vw;
+    width: 100vw;
+    height: 73vw;
+    z-index: -1;
+
+}
+#noVideo {
+
+    height: 26vw; 
+    position: absolute; 
+    top: 44vw; 
+    left: 0vw; 
+
+}

@@ -1,0 +1,321 @@
+@font-face { 
+    font-family: Heebo; src: url("assets/common/Heebo.ttf"); 
+}
+
+@font-face { 
+    font-family: Inconsolata; src: url("assets/common/Inconsolata.ttf"); 
+}
+
+* {
+
+    color: #efe0eb;
+    font-family: Heebo;
+
+}
+body {
+
+    background-color: black;
+    margin: 0;
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+a {
+
+    text-decoration: none;
+
+    transition-duration: 0.3s;
+    transition-property: text-shadow;
+
+}
+a:hover {
+
+    text-shadow: 0px 0px 0.5vw #e096c1,0px 0px 0.5vw #e096c1,0px 0px 0.5vw #e096c1;
+
+}
+h1 {
+
+    text-align: center;
+    font-size: 5vw;
+    font-weight: 100;
+    text-shadow: 0px 0px 1vw #efe0eb, 0px 0px 1vw #efe0eb;
+
+}
+
+.logo {
+
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    transition-duration: 0.3s;
+    transition-property: opacity;
+
+}
+.menuButton {
+
+    font-family: Inconsolata;
+    position: absolute;
+    height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 80px;
+    
+}
+.justify {
+
+    text-align: justify;
+    text-justify: inter-character;
+
+}
+.justify:after {
+
+    content: "";
+    display: inline-block;
+    width: 100%;
+
+}
+.bg {
+
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+}
+.trimTop {
+
+    clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%, 15% 0%);
+
+}
+.trimBottom {
+
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%, 0% 0%);
+
+}
+.display {
+
+    width: fit-content;
+    height: fit-content;
+    overflow-x: hidden;
+
+}
+.panel {
+
+    position: absolute;
+    opacity: 0%;
+
+    transition-duration: 1s;
+    transition-property: opacity;
+
+}
+
+#bgNebula {
+
+    background-image: url("assets/common/background1.jpg");
+    z-index: -1000;
+
+}
+#bgStars1 {
+
+    background-image: url("assets/common/background2.png");
+    z-index: -999;
+
+}
+#bgStars2 {
+
+    background-image: url("assets/common/background3.png");
+    z-index: -998;
+    
+}
+#bgStars3 {
+
+    background-image: url("assets/common/background4.png");
+    z-index: -997;
+    
+}
+#topBar {
+
+    background-color: black;
+    box-shadow: 0px 0px 10px 10px black;
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+
+    transition-duration: 1s;
+    transition-property: top;
+
+    animation: loadTopBar;
+    animation-fill-mode: backwards;
+    animation-duration: 1s;
+    animation-delay: 1s;
+
+}
+#linkMain {
+
+    width: 470px;
+    height: 80px;
+    position: absolute;
+
+}
+#bracket1 {
+
+    position: absolute;
+    left: 90px;
+    top: 10px;
+    font-family: Heebo;
+    font-size: 40px;
+    font-weight: 200;
+
+}
+#nameChange {
+
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    width: 190px;
+    height: 38px;
+    overflow: hidden;
+
+}
+#nameBox {
+
+    position: absolute;
+    left: 0px;
+
+    animation-name: nameAlternate;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-delay: 9s;
+
+}
+#kleinem {
+
+    font-size: 38px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    position: absolute;
+    top: -7px;
+    left: 1px;
+
+}
+#kleinEM {
+
+    width: 190px;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    top: 4px;
+    left: 195px;
+    text-align: justify;
+    line-height: 16px;
+
+}
+#bracket2 {
+
+    position: absolute;
+    left: 290px;
+    top: 10px;
+    font-family: Heebo;
+    font-size: 40px;
+    font-weight: 200;
+
+}
+#profession {
+
+    position: absolute;
+    top: 17px;
+    left: 310px;
+    font-family: Inconsolata;
+    line-height: 20px;
+
+}
+#topRight {
+
+    font-size: 16px;
+    font-family: Inconsolata;
+    position: absolute;
+    width: 40vw;
+    height: 80px;
+    right: 2vw;
+
+}
+#aboutMe {
+
+    left: 10px;
+
+}
+#projects {
+
+    right: 50%;
+    margin-right: -40px;
+
+}
+#contactMe {
+
+    right: 0px;
+
+}
+#fade {
+
+    background-color: rgba(0, 0, 0, 255);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0%;
+
+    transition-duration: 1s;
+    transition-property: opacity;
+
+    animation-name: fadeAway;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+
+}
+#container {
+
+    width: 90vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 100px;
+    padding-bottom: 5vh;
+    overflow-x: hidden;
+
+}
+#content {
+
+    min-height: 90vh;
+
+}
+#testContent {
+
+    margin: auto;
+    height: 20vw;
+    width: 20vw;
+
+}
+
+@keyframes nameAlternate {
+    0% {left:0px;}
+    9% {left:-190px;}
+    50% {left:-190px;}
+    59% {left:0px;}
+}
+
+@keyframes loadTopBar {
+    from {top: -80px;}
+    to {top: 0px}
+}
+
+@keyframes fadeAway {
+    from {opacity: 100%;}
+    to {opacity: 0%;}
+}

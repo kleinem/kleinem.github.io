@@ -1,219 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="base.css">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="projects.css">
     <link rel="icon" type="image/x-icon" href="assets/common/favicon2.ico">
+    <script src="tools.js"></script>
 
     <title>Projects</title>
+
     <script>
-
-        class imgSwap {
-            element;
-            childArray;
-            childCount;
-            current;
-            constructor (el) {
-                this.element = el;
-                this.childArray = this.element.children;
-                this.childCount = this.element.children.length;
-                this.current = 0;
-                this.setPic(0);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001));
-            }
-            setPic (index) {
-                for (let a = 0; a < this.childCount; a++) {
-                    if (a == index) {
-                        this.enable(a);
-                    }
-                    else {
-                        this.disable(a);
-                    }
-                }
-            }
-            enable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 100) {
-                    this.childArray[index].style.opacity = "100%";
-                }
-            }
-            disable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 0) {
-                    this.childArray[index].style.opacity = "0%";
-                }
-            }
-            updatePic() {
-                this.current++;
-                if (this.current >= this.childCount) {
-                    this.current = 0;
-                }
-                this.setPic(this.current);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001) + 3000);
-                console.log("updating to "+this.current);
-            }
-        }
-        function updateScroll() {
-
-            document.getElementById("bg1").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/16 + "px";
-            document.getElementById("bg2").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/8 + "px";
-            document.getElementById("bg3").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/4 + "px";
-            document.getElementById("bg4").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/2 + "px";
-
-        }
-        function hoveringTrue() {
-
-            document.getElementById("icon").src = "assets/common/plp2.png";
-
-        }
-        function hoveringFalse() {
-
-            document.getElementById("icon").src = "assets/common/plp1.png";
-
-        }
         window.onload = init;
         function init() {
-            document.getElementById("icon").src = "assets/common/plp2.png";
-            document.getElementById("icon").src = "assets/common/plp1.png";
-            const img1 = new imgSwap(document.getElementById("img1"));
-            const img2 = new imgSwap(document.getElementById("img2"));
-            const img3 = new imgSwap(document.getElementById("img3"));
-            const img4 = new imgSwap(document.getElementById("img4"));
-            const img5 = new imgSwap(document.getElementById("img5"));
-            const img6 = new imgSwap(document.getElementById("img6"));
-            const img7 = new imgSwap(document.getElementById("img7"));
-        }
 
+            mainHoverF();
+
+        }
     </script>
+
 </head>
-<body>
-    <div class="bg" id="bg1"></div>
-    <div class="bg" id="bg2"></div>
-    <div class="bg" id="bg3"></div>
-    <div class="bg" id="bg4"></div>
-    <div id="container">
-        <div onscroll="updateScroll()" id="content">
-            <div id="innerContent">
-                <div class="load2" id="header">
-                    PROJECTS :
-                </div>
-                <div style="top: 260px;" class="wedges2">
-                    <div class="load3 wedge6" id="img1">
-                        <img src="assets/crosscut/00.jpg" class="fit">
-                        <img src="assets/crosscut/01.jpg" class="fit">
-                        <img src="assets/crosscut/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Crosscut Hollow : </h2>
-                        <a href="crosscut.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Fight your way through a laboratory in the remnants of humanity after they were forced underground. Play as Sam, a failed lab experiment as you combat the inhabitants of what remains. Locked doors and difficult terrain pose a challenge to be overcome, as you manage your health and ammunition through these ruins.</p>
-                    </div>
-                </div>
-                <div style="top: 1060px;" class="wedges2">
-                    <div class="load3 wedge6" id="img2">
-                        <img src="assets/heximus/00.jpg" class="fit">
-                        <img src="assets/heximus/01.jpg" class="fit">
-                        <img src="assets/heximus/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Heximus : </h2>
-                        <a href="heximus.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">A casual local multiplayer game to be played with friends. Plant bombs on the field to increase your territory and gain upgrades. Can you take out your opponent before succumbing to one of their bombs?</p>
-                    </div>
-                </div>
-                <div style="top: 1860px;" class="wedges2">
-                    <div class="load3 wedge6" id="img3">
-                        <img src="assets/apogee/00.jpg" class="fit">
-                        <img src="assets/apogee/01.jpg" class="fit">
-                        <img src="assets/apogee/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Apogee Station: </h2>
-                        <a href="apogee.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Defend against ever-increasing waves of enemy ships intent on destroying your station and your only hopes of survival. From the spritely Scout Craft to the behemoth Eclipse Class Carrier, you’ll need to probe their weaknesses and find the right combination of towers to fend off the onslaught.</p>
-                    </div>
-                </div>
-                <div style="top: 2660px;" class="wedges2">
-                    <div class="load3 wedge6" id="img4">
-                        <img src="assets/pentix/00.jpg" class="fit">
-                        <img src="assets/pentix/01.jpg" class="fit">
-                        <img src="assets/pentix/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Pentix : </h2>
-                        <a href="pentix.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Try to build a tower that manages to reach the top of the board in this printable single-player card game. Drawing different cards will dictate how you are able to build, and how the incoming attacks will land. Will you be able to complete your tower before it collapses under its own weight?</p>
-                    </div>
-                </div>
-                <div style="top: 3460px;" class="wedges2">
-                    <div class="load3 wedge6" id="img5">
-                        <img src="assets/indomitable/00.jpg" class="fit">
-                        <img src="assets/indomitable/01.jpg" class="fit">
-                        <img src="assets/indomitable/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Indomitable : </h2>
-                        <a href="indomitable.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Become truly indomitable in this printable two player card game. You’ll need to manage units, your board, and your resources to out-maneuver your opponent. With four unique commanders to choose from, can you use their special abilities and capitalize on your opponent’s blunders to take control?</p>
-                    </div>
-                </div>
-                <div style="top: 4260px;" class="wedges2">
-                    <div class="load3 wedge6" id="img6">
-                        <img src="assets/snowflake/00.jpg" class="fit">
-                        <img src="assets/snowflake/01.jpg" class="fit">
-                        <img src="assets/snowflake/02.jpg" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Snowflake Scramble : </h2>
-                        <a href="snowflake.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Face off against friends in this friendly local multiplayer game. Collect falling snow, and avoid collecting any of the debris lest you drop what you’ve collected. Will you be able to complete a snowman before your opponent?</p>
-                    </div>
-                </div>
-                <div style="top: 5060px; padding-bottom: 100px;" class="wedges2">
-                    <div class="load3 wedge6" id="img7">
-                        <img src="assets/goblin/00.png" class="fit">
-                        <img src="assets/goblin/01.png" class="fit">
-                        <img src="assets/goblin/02.png" class="fit">
-                    </div>
-                    <div class="text4 load4">
-                        <h2 style="position: absolute; top: -10px; left: 40px; font-size: 40px; font-family: Heebo; font-weight: 200;">Goblin Gunner : </h2>
-                        <a href="goblin.html"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; top: 0px;">Learn More >></h2></a>
-                        <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Gobbo is a famished goblin in need of a cartoonishly large meat shank. Fight through hordes of enemies in this fantasy western meld. Obtain *rare* meats through combat with mobs, or through the grizzled shopkeepers, who you're pretty sure are short-changing you. Upgrade your weapon and character stats, and collect unique utility items to help you defeat your foes, and make it to your dream dinner!</p>
-                    </div>
+<body onscroll="updateScroll()" id="body">
+    <div class="bg" id="bgNebula"></div>
+    <div class="bg" id="bgStars1"></div>
+    <div class="bg" id="bgStars2"></div>
+    <div class="bg" id="bgStars3"></div>
+    <div id="fade"></div>
+    <div id="topBar">
+        <a onmouseover="mainHoverT()" onmouseout="mainHoverF()" onclick="goto('index.html')" href="javascript:void(0)"><div id="linkMain">
+            <img src="assets/common/plp1.png" class="logo" id="logoWhite">
+            <img src="assets/common/plp2.png" class="logo" id="logoPink">
+            <div id="bracket1">[</div>
+            <div id="nameChange">
+                <div id="nameBox">
+                    <div id="kleinem">KLEINEM</div>
+                    <div id="kleinEM"><span style="letter-spacing: 9.1px;">KLEIN ELIAS</span><br><span style="letter-spacing: 13px;">MISIURSKI</span></div>
                 </div>
             </div>
+            <div id="bracket2">]</div>
+            <div id="profession">Programmer, Game<br>Designer & Artist</div>
+        </div></a>
+        <div id="topRight">
+            <a onclick="goto('aboutme.html')" href="javascript:void(0)"><div class="menuButton justify" id="aboutMe">
+                About Me
+            </div></a>
+            <a onclick="goto('projects.html')" href="javascript:void(0)"><div class="menuButton justify" id="projects">
+                Projects
+            </div></a>
+            <a onclick="goto('contactme.html')" href="javascript:void(0)"><div class="menuButton justify" id="contactMe">
+                Contact Me
+            </div></a>
         </div>
-        <div id="topBar">
-            <a onmouseover="hoveringTrue()" onmouseout="hoveringFalse()" href="index.html">
-            <div id="topLeft">
-                <img src="assets/common/plp1.png" id="icon">
-                <div id="name">
-                    <div id="bracket1">[</div>
-                    <div id="interior1">
-                        <div id="interior2">
-                            <div class="justify" id="kleinem">KLEINEM</div>
-                            <div class="justify" id="klein">KLEIN ELIAS MISIURSKI</div>
-                        </div>
-                    </div>
-                    <div id="bracket2">]</div>
-                </div>
-                <div id="profession">
-                    Programmer, Artist<br>& Game Designer
-                </div>
-            </div>
-            </a>
-            <div id="topRight">
-                <div class="justify" id="aboutMe">
-                    <a href="aboutme.html">About Me</a>
-                </div>
-                <div class="justify" id="projects">
-                    <a href="projects.html">Projects</a>
-                </div>
-                <div class="justify" id="contactMe">
-                    <a href="contactme.html">Contact Me</a>
-                </div>
-            </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h1>PROJECTS</h1>
+            <table id="projectTable">
+                <tr>
+                    <th style="width: 6vw;"></th>
+                    <th style="width: 21vw;">Name  </th>
+                    <th style="width: 7vw;">Date  </th>
+                    <th style="width: 12vw;">Team Size  </th>
+                    <th style="width: 19vw;">Affiliation  </th>
+                </tr>
+                <tr onclick="goto('goblin.html')">
+                    <td><img src="assets/goblin/00.jpg"></td>
+                    <td class="name">Goblin Gunner</td>
+                    <td>2022</td>
+                    <td>4</td>
+                    <td>Fitchburg State University & Rockstar</td>
+                </tr>
+                <tr onclick="goto('crosscut.html')">
+                    <td><img src="assets/crosscut/00.jpg"></td>
+                    <td class="name">Crosscut Hollow</td>
+                    <td>2020</td>
+                    <td>7</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+                <tr onclick="goto('apogee.html')">
+                    <td><img src="assets/apogee/00.jpg"></td>
+                    <td class="name">Apogee Station</td>
+                    <td>2020</td>
+                    <td>4</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+                <tr onclick="goto('snowflake.html')">
+                    <td><img src="assets/snowflake/00.jpg"></td>
+                    <td class="name">Snowflake Scramble</td>
+                    <td>2019</td>
+                    <td>3</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+                <tr onclick="goto('heximus.html')">
+                    <td><img src="assets/heximus/00.jpg"></td>
+                    <td class="name">Heximus</td>
+                    <td>2019</td>
+                    <td>1</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+                <tr onclick="goto('pentix.html')">
+                    <td></td>
+                    <td class="name">Pentix</td>
+                    <td>2018</td>
+                    <td>1</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+                <tr onclick="goto('indomitable.html')">
+                    <td><img src="assets/indomitable/00.jpg"></td>
+                    <td class="name">Indomitable</td>
+                    <td>2018</td>
+                    <td>4</td>
+                    <td>Fitchburg State University</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>

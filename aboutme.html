@@ -1,137 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="base.css">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="info.css">
     <link rel="icon" type="image/x-icon" href="assets/common/favicon2.ico">
+    <script src="tools.js"></script>
 
     <title>About Me</title>
+
     <script>
-
-        class imgSwap {
-            element;
-            childArray;
-            childCount;
-            current;
-            constructor (el) {
-                this.element = el;
-                this.childArray = this.element.children;
-                this.childCount = this.element.children.length;
-                this.current = 0;
-                this.setPic(0);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001));
-            }
-            setPic (index) {
-                for (let a = 0; a < this.childCount; a++) {
-                    if (a == index) {
-                        this.enable(a);
-                    }
-                    else {
-                        this.disable(a);
-                    }
-                }
-            }
-            enable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 100) {
-                    this.childArray[index].style.opacity = "100%";
-                }
-            }
-            disable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 0) {
-                    this.childArray[index].style.opacity = "0%";
-                }
-            }
-            updatePic() {
-                this.current++;
-                if (this.current >= this.childCount) {
-                    this.current = 0;
-                }
-                this.setPic(this.current);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001) + 3000);
-                console.log("updating to "+this.current);
-            }
-        }
-        function updateScroll() {
-
-            document.getElementById("bg1").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/16 + "px";
-            document.getElementById("bg2").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/8 + "px";
-            document.getElementById("bg3").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/4 + "px";
-            document.getElementById("bg4").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/2 + "px";
-
-        }
-        function hoveringTrue() {
-
-            document.getElementById("icon").src = "assets/common/plp2.png";
-
-        }
-        function hoveringFalse() {
-
-            document.getElementById("icon").src = "assets/common/plp1.png";
-
-        }
         window.onload = init;
         function init() {
-            document.getElementById("icon").src = "assets/common/plp2.png";
-            document.getElementById("icon").src = "assets/common/plp1.png";
-            const img1 = new imgSwap(document.getElementById("img1"));
-            const img2 = new imgSwap(document.getElementById("img2"));
-        }
 
-    </script>
+            var allDisplays = new Array();
+            mainHoverF();
+            fitAllChildren();
+            createDisplays(allDisplays);
+
+        }
+    </script> 
+
 </head>
-<body>
-    <div class="bg" id="bg1"></div>
-    <div class="bg" id="bg2"></div>
-    <div class="bg" id="bg3"></div>
-    <div class="bg" id="bg4"></div>
-    <div id="container">
-        <div onscroll="updateScroll()" id="content">
-            <div id="innerContent">
-                <div class="load2" id="header">
-                    KLEIN ELIAS MISIURSKI :
-                    <p style="font-size: 28px; bottom: 10px; font-family: Inconsolata;">Age : 25</p>
-                </div>
-                <div class="load3 text6">
-                    <p style="position: absolute; top: 80px; font-size: 24px;">Hey, I'm Klein Misiurski, a recent graduate from Fitchburg State University. I'm a very thorough Game Designer with a strong passion for the creation of polished games and the accumulation of new skills. While I'm fairly well versed in a bredth of Game Design disciplines, I have a specialization in game programming and game art(predominantly 2D). I have a strong familiarity with several programming languages(Java, C#, javascript, Python, Bash, Lua), both Unity and Unreal Engines, and a wide suite of development software(Photoshop, Maya, InDesign, Excel, etc.). I'm constantly working on new projects which usually tend to bring about new challanges and in turn new understandings.</p>
-                    <div style="position: absolute; top: 400px; height: 300px;">
-                    <img src="assets/common/portrait.png" style="position: relative; top: 0px; height: 100%;">
-                    </div>
-                    <a href="assets/common/Resume - Klein Misiurski.pdf"><h2 style="font-size: 30px; font-family: Inconsolata; position: relative; font-weight: 400; top: 720px; ">Resume >></h2></a>
+<body onscroll="updateScroll()" id="body">
+    <div class="bg" id="bgNebula"></div>
+    <div class="bg" id="bgStars1"></div>
+    <div class="bg" id="bgStars2"></div>
+    <div class="bg" id="bgStars3"></div>
+    <div id="fade"></div>
+    <div id="topBar">
+        <a onmouseover="mainHoverT()" onmouseout="mainHoverF()" onclick="goto('index.html')" href="javascript:void(0)"><div id="linkMain">
+            <img src="assets/common/plp1.png" class="logo" id="logoWhite">
+            <img src="assets/common/plp2.png" class="logo" id="logoPink">
+            <div id="bracket1">[</div>
+            <div id="nameChange">
+                <div id="nameBox">
+                    <div id="kleinem">KLEINEM</div>
+                    <div id="kleinEM"><span style="letter-spacing: 9.1px;">KLEIN ELIAS</span><br><span style="letter-spacing: 13px;">MISIURSKI</span></div>
                 </div>
             </div>
+            <div id="bracket2">]</div>
+            <div id="profession">Programmer, Game<br>Designer & Artist</div>
+        </div></a>
+        <div id="topRight">
+            <a onclick="goto('aboutme.html')" href="javascript:void(0)"><div class="menuButton justify" id="aboutMe">
+                About Me
+            </div></a>
+            <a onclick="goto('projects.html')" href="javascript:void(0)"><div class="menuButton justify" id="projects">
+                Projects
+            </div></a>
+            <a onclick="goto('contactme.html')" href="javascript:void(0)"><div class="menuButton justify" id="contactMe">
+                Contact Me
+            </div></a>
         </div>
-        <div id="topBar">
-            <a onmouseover="hoveringTrue()" onmouseout="hoveringFalse()" href="index.html">
-            <div id="topLeft">
-                <img src="assets/common/plp1.png" id="icon">
-                <div id="name">
-                    <div id="bracket1">[</div>
-                    <div id="interior1">
-                        <div id="interior2">
-                            <div class="justify" id="kleinem">KLEINEM</div>
-                            <div class="justify" id="klein">KLEIN ELIAS MISIURSKI</div>
-                        </div>
-                    </div>
-                    <div id="bracket2">]</div>
-                </div>
-                <div id="profession">
-                    Programmer, Artist<br>& Game Designer
-                </div>
-            </div>
-            </a>
-            <div id="topRight">
-                <div class="justify" id="aboutMe">
-                    <a href="aboutme.html">About Me</a>
-                </div>
-                <div class="justify" id="projects">
-                    <a href="projects.html">Projects</a>
-                </div>
-                <div class="justify" id="contactMe">
-                    <a href="contactme.html">Contact Me</a>
-                </div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h1>KLEIN ELIAS MISIURSKI</h1>
+            <div style="position: relative; width: 90vw; height: 40vw;">
+
+                <img src="assets/common/portrait.png" style="width: 20vw; position: absolute;
+                left: 10vw;">
+                <p style="width: 46vw; margin: auto; position: absolute; right: 10vw;">Hey, I'm Klein Misiurski, a recent graduate from Fitchburg State University. I'm a very thorough Game Programmer with a strong passion for the creation of polished games and the accumulation of new skills. While I'm fairly well versed in a breadth of Game Design disciplines, I specialize in game programming. I have a strong familiarity with several languages(Java, C#, javascript, Python, Bash, Lua), both Unity and Unreal Engines, and a wide suite of development software(Photoshop, Maya, InDesign, Excel, etc.). I'm constantly working on new projects which usually tend to bring about new challanges opportunities for learning.</p>
+                <a href="assets/common/Resume - Klein Misiurski.pdf" target="_blank"><h3 style="position: absolute; right: 41vw; top: 20vw;">Resume >></h3></a>
+    
             </div>
         </div>
     </div>

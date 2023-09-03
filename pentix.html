@@ -1,150 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="base.css">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="showcase.css">
     <link rel="icon" type="image/x-icon" href="assets/common/favicon2.ico">
+    <script src="tools.js"></script>
 
     <title>Pentix</title>
+
     <script>
-
-        class imgSwap {
-            element;
-            childArray;
-            childCount;
-            current;
-            constructor (el) {
-                this.element = el;
-                this.childArray = this.element.children;
-                this.childCount = this.element.children.length;
-                this.current = 0;
-                this.setPic(0);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001));
-            }
-            setPic (index) {
-                for (let a = 0; a < this.childCount; a++) {
-                    if (a == index) {
-                        this.enable(a);
-                    }
-                    else {
-                        this.disable(a);
-                    }
-                }
-            }
-            enable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 100) {
-                    this.childArray[index].style.opacity = "100%";
-                }
-            }
-            disable (index) {
-                if (this.childArray[index].style.getPropertyValue("opacity") != 0) {
-                    this.childArray[index].style.opacity = "0%";
-                }
-            }
-            updatePic() {
-                this.current++;
-                if (this.current >= this.childCount) {
-                    this.current = 0;
-                }
-                this.setPic(this.current);
-                setTimeout(() => {
-                    this.updatePic();
-                }, Math.floor(Math.random() * 3001) + 3000);
-                console.log("updating to "+this.current);
-            }
-        }
-        function updateScroll() {
-
-            document.getElementById("bg1").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/16 + "px";
-            document.getElementById("bg2").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/8 + "px";
-            document.getElementById("bg3").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/4 + "px";
-            document.getElementById("bg4").style.backgroundPositionY = "-" + (document.getElementById("content").scrollTop)/2 + "px";
-
-        }
-        function hoveringTrue() {
-
-            document.getElementById("icon").src = "assets/common/plp2.png";
-
-        }
-        function hoveringFalse() {
-
-            document.getElementById("icon").src = "assets/common/plp1.png";
-
-        }
         window.onload = init;
         function init() {
-            document.getElementById("icon").src = "assets/common/plp2.png";
-            document.getElementById("icon").src = "assets/common/plp1.png";
-            const img1 = new imgSwap(document.getElementById("img1"));
-            const img2 = new imgSwap(document.getElementById("img2"));
-        }
 
+            var allDisplays = new Array();
+            mainHoverF();
+            fitAllChildren();
+            createDisplays(allDisplays);
+
+        }
     </script>
+
 </head>
-<body>
-    <div class="bg" id="bg1"></div>
-    <div class="bg" id="bg2"></div>
-    <div class="bg" id="bg3"></div>
-    <div class="bg" id="bg4"></div>
-    <div id="container">
-        <div onscroll="updateScroll()" id="content">
-            <div id="innerContent">
-                <div class="load2" id="header">
-                    PENTIX :
-                    <p style="font-size: 20px; bottom: 10px; font-family: Inconsolata;">(2018)</p>
-                </div>
-                <div class="load3 wedge4" id="img1">
-                    <img src="assets/pentix/00.jpg" class="fit">
-                    <img src="assets/pentix/04.jpg" class="fit">
-                    <img src="assets/pentix/05.jpg" class="fit">
-                </div>
-                <div class="text2 load5">
-                    <p style="position: absolute; top: 20px; left: 140px;"><span style="font-weight:300; font-family: Heebo;">Team Size :</span> 1</p>
-                    <p style="position: absolute; top: 120px; left: 110px;"><span style="font-weight:300; font-family: Heebo;">Affiliation :</span> Fitchburg State University</p>
-                    <p style="position: absolute; top: 220px; left: 80px;"><span style="font-weight:300; font-family: Heebo;">Development Roles :</span> Artist / Game Designer</p>
-                    <p style="position: absolute; top: 320px; left: 50px;"><span style="font-weight:300; font-family: Heebo;">Platform :</span> Analogue</p>
-                    <a href="https://kleinem.itch.io/pentix"><h2 style="font-size: 30px; font-family: Inconsolata; font-weight: 400; position: absolute; right: 0px; bottom: 0px;">Play Now >></h2></a>
-                </div>
-                <div class="text3 load6">
-                    <h2 style="position: absolute; top: 20px; left: 20px; font-size: 30px; font-family: Heebo; font-weight: 200;">Project Reflection : </h2>
-                    <p style="position: absolute; top: 80px; left: 60px; font-size: 24px;">Pentix was an interesting game in that it was created to be both challenging and enjoyable in a single player setting without the automation of rules present in digital media. It called for a large amount of play testing and balancing to develop a user-friendly experience which was new to me at the time.</p>
-                </div>
-                <div class="load4 wedge5" id="img2">
-                    <img src="assets/pentix/02.jpg" class="fit">
-                    <img src="assets/pentix/03.jpg" class="fit">
-                    <img src="assets/pentix/01.jpg" class="fit">
+<body onscroll="updateScroll()" id="body">
+    <div class="bg" id="bgNebula"></div>
+    <div class="bg" id="bgStars1"></div>
+    <div class="bg" id="bgStars2"></div>
+    <div class="bg" id="bgStars3"></div>
+    <div id="fade"></div>
+    <div id="topBar">
+        <a onmouseover="mainHoverT()" onmouseout="mainHoverF()" onclick="goto('index.html')" href="javascript:void(0)"><div id="linkMain">
+            <img src="assets/common/plp1.png" class="logo" id="logoWhite">
+            <img src="assets/common/plp2.png" class="logo" id="logoPink">
+            <div id="bracket1">[</div>
+            <div id="nameChange">
+                <div id="nameBox">
+                    <div id="kleinem">KLEINEM</div>
+                    <div id="kleinEM"><span style="letter-spacing: 9.1px;">KLEIN ELIAS</span><br><span style="letter-spacing: 13px;">MISIURSKI</span></div>
                 </div>
             </div>
+            <div id="bracket2">]</div>
+            <div id="profession">Programmer, Game<br>Designer & Artist</div>
+        </div></a>
+        <div id="topRight">
+            <a onclick="goto('aboutme.html')" href="javascript:void(0)"><div class="menuButton justify" id="aboutMe">
+                About Me
+            </div></a>
+            <a onclick="goto('projects.html')" href="javascript:void(0)"><div class="menuButton justify" id="projects">
+                Projects
+            </div></a>
+            <a onclick="goto('contactme.html')" href="javascript:void(0)"><div class="menuButton justify" id="contactMe">
+                Contact Me
+            </div></a>
         </div>
-        <div id="topBar">
-            <a onmouseover="hoveringTrue()" onmouseout="hoveringFalse()" href="index.html">
-            <div id="topLeft">
-                <img src="assets/common/plp1.png" id="icon">
-                <div id="name">
-                    <div id="bracket1">[</div>
-                    <div id="interior1">
-                        <div id="interior2">
-                            <div class="justify" id="kleinem">KLEINEM</div>
-                            <div class="justify" id="klein">KLEIN ELIAS MISIURSKI</div>
-                        </div>
-                    </div>
-                    <div id="bracket2">]</div>
+    </div>
+    <div id="container">
+        <div id="content">
+            <h1>PENTIX</h1>
+            <div id="showcase">
+
+                <div id="date">(2018)</div>
+                <div class="trimBottom display" style="height: 40vw; position: absolute; right: -16vw;">
+                    <img src="assets/pentix/00.jpg" class="panel">
+                    <img src="assets/pentix/01.jpg" class="panel">
+                    <img src="assets/pentix/02.jpg" class="panel">
+                    <img src="assets/pentix/03.jpg" class="panel">
+                    <img src="assets/pentix/04.jpg" class="panel">
+                    <img src="assets/pentix/05.jpg" class="panel">
                 </div>
-                <div id="profession">
-                    Programmer, Artist<br>& Game Designer
-                </div>
-            </div>
-            </a>
-            <div id="topRight">
-                <div class="justify" id="aboutMe">
-                    <a href="aboutme.html">About Me</a>
-                </div>
-                <div class="justify" id="projects">
-                    <a href="projects.html">Projects</a>
-                </div>
-                <div class="justify" id="contactMe">
-                    <a href="contactme.html">Contact Me</a>
+                <a href="https://kleinem.itch.io/pentix" target="_blank"><h3 id="playNow">Play Now >></h3></a>
+                <p id="platform"><span class="bold">Platform :</span><br>
+                    Analog
+                </p>
+                <p id="teamSize"><span class="bold">Team Size : </span><br>
+                    1
+                </p>
+                <p id="affiliation"><span class="bold">Affiliation : </span><br>
+                    Fitchburg State University
+                </p>
+                <p id="developmentRoles"><span class="bold">Development Roles : </span><br>
+                    Artist / Game Designer
+                </p>
+                <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" id="video" frameBorder="0"></iframe> 
+
+                <p id="reflection"><span class="bold">Project Reflection : </span><br><br>
+                    Pentix was an interesting game in that it was created to be both challenging and enjoyable in a single player setting without the automation of rules present in digital media. It called for a large amount of play testing and balancing to develop a user-friendly experience which was new to me at the time.
+                </p>
+                <div id="panel" style="background-color: rgba(246, 150, 255, 0.07);"></div>
+                <div class="display" style="height: 26vw; position: absolute; top: 44vw; left: 0vw;">
+                    <img src="assets/pentix/05.jpg" class="panel">
+                    <img src="assets/pentix/03.jpg" class="panel">
+                    <img src="assets/pentix/04.jpg" class="panel">
+                    <img src="assets/pentix/00.jpg" class="panel">
+                    <img src="assets/pentix/01.jpg" class="panel">
+                    <img src="assets/pentix/02.jpg" class="panel">
                 </div>
             </div>
         </div>
