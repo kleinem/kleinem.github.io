@@ -41,6 +41,11 @@ h1 {
     font-weight: 100;
     text-shadow: 0px 0px 1vw #efe0eb, 0px 0px 1vw #efe0eb;
 
+    animation-name: fadeIn;
+    animation-delay: 1.5s;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+
 }
 
 .logo {
@@ -114,6 +119,14 @@ h1 {
 
 }
 
+#innerContent {
+
+    animation-name: fadeIn;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+
+}
 #bgNebula {
 
     background-image: url("assets/common/background1.jpg");
@@ -319,3 +332,8 @@ h1 {
     from {opacity: 100%;}
     to {opacity: 0%;}
 }
+@keyframes fadeIn {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+

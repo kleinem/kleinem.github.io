@@ -52,6 +52,11 @@ function goto(destination_) {
     setTimeout(function() {window.location.href = destination_;}, 1000);
 
 }
+function openNew(destination_) {
+
+    window.open(destination_, '_blank');
+
+}
 function updateScroll() {
 
     document.getElementById("bgNebula").style.backgroundPositionY = "-" + (window.scrollY)/16 + "px";

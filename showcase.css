@@ -36,8 +36,13 @@ h3:hover {
 #showcase {
 
     width: 90vw;
-    height: 76vw;
+    height: 90vw;
     position: relative;
+
+    animation-name: fadeIn;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 
 }
 #date {
@@ -97,15 +102,26 @@ h3:hover {
     width: 36vw;
 
 }
-#reflection {
+#description {
 
     position: absolute; 
-    top: 42vw; 
+    top: 42.5vw; 
     right: 0vw; 
     height: 8vw; 
     width: 36vw; 
     text-align: justify;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
+
+}
+#reflection {
+
+    position: absolute; 
+    top: 71.5vw; 
+    left: 4vw; 
+    height: 17vw; 
+    width: 82vw; 
+    text-align: justify;
+    font-size: 1.5vw;
 
 }
 #video {
@@ -123,7 +139,7 @@ h3:hover {
     top: -1.5vw;
     left: -5vw;
     width: 100vw;
-    height: 73vw;
+    height: 91.5vw;
     z-index: -1;
 
 }
